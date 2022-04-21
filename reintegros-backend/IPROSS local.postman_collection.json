@@ -1,0 +1,2139 @@
+{
+	"info": {
+		"_postman_id": "5f3c0eee-2618-4bcc-9317-0cf95a6290bd",
+		"name": "IPROSS local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Archivos Adjuntos",
+			"item": [
+				{
+					"name": "Crear Archivo Adjunto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivos",
+									"type": "file",
+									"src": "/home/victor/Descargas/2021-03-22_11-12.png"
+								},
+								{
+									"key": "etiqueta",
+									"value": "Remito",
+									"type": "text"
+								},
+								{
+									"key": "prestacion",
+									"value": "17",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/archivos-adjuntos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"archivos-adjuntos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archivos Adjuntos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/archivos-adjuntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"archivos-adjuntos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archivo Adjunto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/archivos-adjuntos/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"archivos-adjuntos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prestacion",
+			"item": [
+				{
+					"name": "Prestacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cantidad\": 5,\n    \"categoria\": 3,\n    \"solicitud\": 5,\n    \"prestador\": 3,\n    \"factura\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/prestaciones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"prestaciones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prestaciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/prestaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"prestaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prestacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/prestaciones/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"prestaciones",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asignar Auditoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/prestaciones/6/asignar-auditoria-a-prestacion/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"prestaciones",
+								"6",
+								"asignar-auditoria-a-prestacion",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Solicitud",
+			"item": [
+				{
+					"name": "Solicitud",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"solicitud\": {\n        \"delegacion\": 4,\n        \"afiliado\": \"03-34289052/00\"\n    },\n    \"prestaciones\": [\n        {\n            \"cantidad\": 4,\n            \"categoria\": 2,\n            \"prestador\": 1,\n            \"nomenclador\": 1,\n            \"coseguroNomenclador\": 10.00,\n            \"valorIprossNomenclador\": 15.00,\n            \"valorPrestacion\": 20.00,\n            \"cobertura\": 2,\n            \"periodo\": \"mes\",\n            \"fechaPractica\": \"2021-03-29\",\n            \"factura\": 26\n        },\n        {\n            \"cantidad\": 5,\n            \"categoria\": 3,\n            \"prestador\": 2,\n            \"nomenclador\": 1,\n            \"coseguroNomenclador\": 10.00,\n            \"valorIprossNomenclador\": 15.00,\n            \"valorPrestacion\": 20.00,\n            \"cobertura\": 2,\n            \"periodo\": \"mes\",\n            \"fechaPractica\": \"2021-03-29\",\n            \"factura\": 27\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/solicitudes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"solicitudes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitudes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/solicitudes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"solicitudes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/solicitudes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"solicitudes",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitud",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/solicitudes/30/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"solicitudes",
+								"30",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4NTgzNTI5LCJqdGkiOiI5YmUzODZmNDZkMTM0YmQ5YmJmMGIxYjBjOTg1Y2QzMyIsInVzZXJfaWQiOjF9.VjmeAjXobxE1PvHk7II2g-7C8tuc-DYABxMxcffgVgE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/usuarios/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4NTgzNTI5LCJqdGkiOiI5YmUzODZmNDZkMTM0YmQ5YmJmMGIxYjBjOTg1Y2QzMyIsInVzZXJfaWQiOjF9.VjmeAjXobxE1PvHk7II2g-7C8tuc-DYABxMxcffgVgE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/usuarios/7/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"7",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1OTE1Mjc0LCJqdGkiOiI0ZmU0NzFmYTZjY2M0MTQ2OTczZWJmOTA2ODQ5OTYwMCIsInVzZXJfaWQiOjF9.g7JXx9LsmcskIojw2_sfrVWZ1jGqgp4Zd9PrQ-AnF7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"groups\":[\n        1\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/usuarios/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"usuarios",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Delegaciones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1OTA3NzU1LCJqdGkiOiI1NTkwYThmOWJmOTE0NmYwYmY4ZWQzZjI0MzZkOTRjNiIsInVzZXJfaWQiOjF9.6_HX1F79K9tmq9Ebp4DtAa_G3viqqIzYY0jeSpJ9uTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"delegaciones\":[\n        1,2\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/usuarios/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"usuarios",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Delegacion Preferida",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE1OTA3ODczLCJqdGkiOiJkOTNlNTJkOWRhN2U0NWY3YTFkYWUxNDFkOWU5NjhkMCIsInVzZXJfaWQiOjF9.3MLY4pe9-KemOxfQLlPauzeP6P8csqU_HsvCWSWFcNc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"delegacionPreferida\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/usuarios/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"usuarios",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Capitulos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4NTg3OTgzLCJqdGkiOiJlODcyMzFkNDQyNWE0YWYzYTJiNzFkM2M4MmZlZTllMyIsInVzZXJfaWQiOjF9.QxQRmZ-Fab0TRV-Fpdg_3ZmxDRV5S777oBMVQatoLgc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"capitulos\": [1,4,5,999999]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/usuarios/7/actualizar-capitulos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"7",
+								"actualizar-capitulos",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Factura",
+			"item": [
+				{
+					"name": "Factura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "/home/victor/Descargas/1614121853720.jpeg"
+								},
+								{
+									"key": "etiqueta",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/facturas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"facturas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Facturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Factura",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/facturas/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"facturas",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"victor\",\n    \"password\":\"victor\"        \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with ldap",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"mvega\",\n    \"password\":\"mvega@1900\"        \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/usuarios/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"usuarios",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delegacion",
+			"item": [
+				{
+					"name": "Delegaciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/delegaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delegaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/delegaciones/2/agregar-usuario-a-delegacion/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delegaciones",
+								"2",
+								"agregar-usuario-a-delegacion",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delegacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/delegaciones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delegaciones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Afiliado",
+			"item": [
+				{
+					"name": "Afiliado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":\"1234567/8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/afiliados/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"afiliados",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Afiliados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/afiliados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"afiliados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Afiliado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/afiliados/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"afiliados",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Afiliado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/afiliados/5/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"afiliados",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Padron IPROSS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "numeros[]",
+									"value": "01-03025340/00",
+									"type": "text"
+								},
+								{
+									"key": "numeros[]",
+									"value": "02-06705114/00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "numeros[]",
+									"value": "03-03724823/00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "numeros[]",
+									"value": "03-24803604/00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "numeros[]",
+									"value": "03-34289052/00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "numeros[]",
+									"value": "03-20755802/00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "numeros[]",
+									"value": "03-29898467/00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "numeros[]",
+									"value": "03-28385233/00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "numeros[]",
+									"value": "03-20989020/00",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.ipross.rionegro.gov.ar/api/v1/afiliados/reintegros",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ipross",
+								"rionegro",
+								"gov",
+								"ar"
+							],
+							"path": [
+								"api",
+								"v1",
+								"afiliados",
+								"reintegros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Capitulo",
+			"item": [
+				{
+					"name": "Capitulo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"capitulo\": 6,\n    \"descripcion\": \"OPERACIONES EN LA MAMA\",\n    \"coseguro\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/capitulos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"capitulos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Capitulos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/capitulos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"capitulos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Capitulo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/capitulos/5/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"capitulos",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Capitulo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/capitulos/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"capitulos",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auditoria",
+			"item": [
+				{
+					"name": "Auditoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4ODQwMTE2LCJqdGkiOiI0ZTk1MmQxNWI0YTU0NDE1OTZmYzcwYzQ3NThkZDBhYSIsInVzZXJfaWQiOjF9.4F9aNQWp-R-9vyR7IBD4uTqTXBhVatpu4z6c5s9IBd4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"prestacion\": 26,\n    \"auditorAsignado\": 2,\n    \"actualizadoPor\": 1,\n    \"motivoDeRechazo\": \"seleccioneUnaOpcion\",\n    \"porcentajeDeCobertura\": 100,\n    \"montoAReintegrar\": 200300.25\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auditorias/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auditorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auditorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3OTk0MTYzLCJqdGkiOiI0MzcxNDA0MjgxMWI0NzljOGJlOGE2OGZkODUxYTc5MCIsInVzZXJfaWQiOjF9.sKUuzL2EwBf_jWDH_ywPHqdVpAHy4Jh8BDlbRPYs7gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/auditorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auditorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auditoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3OTk0MTYzLCJqdGkiOiI0MzcxNDA0MjgxMWI0NzljOGJlOGE2OGZkODUxYTc5MCIsInVzZXJfaWQiOjF9.sKUuzL2EwBf_jWDH_ywPHqdVpAHy4Jh8BDlbRPYs7gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/auditorias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auditorias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auditoria Log",
+			"item": [
+				{
+					"name": "Cambiar de auditor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3OTk0MTYzLCJqdGkiOiI0MzcxNDA0MjgxMWI0NzljOGJlOGE2OGZkODUxYTc5MCIsInVzZXJfaWQiOjF9.sKUuzL2EwBf_jWDH_ywPHqdVpAHy4Jh8BDlbRPYs7gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"auditoria\": 2,\n    \"auditor\": 6\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auditorias/cambiar-de-auditor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auditorias",
+								"cambiar-de-auditor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cambiar de estado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3OTk0MTYzLCJqdGkiOiI0MzcxNDA0MjgxMWI0NzljOGJlOGE2OGZkODUxYTc5MCIsInVzZXJfaWQiOjF9.sKUuzL2EwBf_jWDH_ywPHqdVpAHy4Jh8BDlbRPYs7gc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"auditoria\": 2,\n    \"auditor\": 6,\n    \"estado\": \"rechazado\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auditorias/cambiar-de-estado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auditorias",
+								"cambiar-de-estado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "Groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MDUzNzk4LCJqdGkiOiIyZDhjYzI5OTM2Y2U0NjVjYjU3MmVjM2Y2ZmUyYzc3ZCIsInVzZXJfaWQiOjF9.gNoXHvL3l0TOUy0J_mBNLhjfKu-mp1Ps_QRT3EllNzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta de Terceros",
+			"item": [
+				{
+					"name": "Cuenta de terceros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxMDA2ODc2LCJqdGkiOiI4MDBjZGI5YTE3YjA0YjBmOGM2ZjdiNzdmNzQ0OGM3MiIsInVzZXJfaWQiOjF9.576ZZIlDNERwyaEjR8kDImQE-45AFqq2McvNeivOvJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "adjuntos",
+									"type": "file",
+									"src": [
+										"/home/victor/Descargas/2021-03-19_15-41.png",
+										"/home/victor/Descargas/Abitu - Armado de Legajo.pdf",
+										"/home/victor/Descargas/test_document.docx",
+										"/home/victor/Descargas/google-maps-earth-1.0.0.jpg"
+									]
+								},
+								{
+									"key": "nombre",
+									"value": "Victor",
+									"type": "text"
+								},
+								{
+									"key": "apellido",
+									"value": "Abitu",
+									"type": "text"
+								},
+								{
+									"key": "cuitCuil",
+									"value": "20371476459",
+									"type": "text"
+								},
+								{
+									"key": "cbu",
+									"value": "0070348030004005050474",
+									"type": "text"
+								},
+								{
+									"key": "responsableDeCarga",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "delegacion",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "afiliado",
+									"value": "3",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/cuenta-de-terceros/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cuenta-de-terceros",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cuentas de terceros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE5NTM2MjI3LCJqdGkiOiI3YTNjMzM5ODBlOWM0YTI5YTFkOWJkZGEyNjk4YjQ1MyIsInVzZXJfaWQiOjF9.cCVC0OXFkihX-vmoxpvzJ-8Ltk8JOyPtM3G1iqGTlbg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cuenta-de-terceros/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cuenta-de-terceros",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cuenta de terceros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE5NTM2ODA3LCJqdGkiOiI1ZWRkMDEyNzJhOWY0NTc0YmNlNjkxYzFhYjY0MWJlMCIsInVzZXJfaWQiOjF9.tck88wZE4GGU-l0m4TwDSMsO-2bENmROorRV4sQVxsY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cuenta-de-terceros/53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cuenta-de-terceros",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cuenta de terceros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NzY4OTI4LCJqdGkiOiI1MDQ1NjkzMDY4MjA0YWMzYmMxMzkwNTUxNDVjNmQzZiIsInVzZXJfaWQiOjF9.FitYJFTsYlImG5IKvjkpnJeEqFO_DQNhGeafQBDRomw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cbu\": \"\",\n    \"nombre\": \"Juan\",\n    \"apellido\": \"Perez\",\n    \"cuitCuil\": \"\",\n    \"responsableDeCarga\": 1,\n    \"autorizacionFinal\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/cuenta-de-terceros/27/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cuenta-de-terceros",
+								"27",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Nomenclador",
+			"item": [
+				{
+					"name": "Importar Nomenclador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nomenclador",
+									"type": "file",
+									"src": "/home/victor/Escritorio/posta_ticket/2/prueba.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/importar-nomenclador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"importar-nomenclador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verificar Nomenclador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nomenclador",
+									"type": "file",
+									"src": "/home/victor/Escritorio/prueba.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/verificador-nomenclador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"verificador-nomenclador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nomencladores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/nomenclador/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"nomenclador",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prestadores",
+			"item": [
+				{
+					"name": "Prestadores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/prestadores/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"prestadores",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/categorias/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta Judicial",
+			"item": [
+				{
+					"name": "Cuentas Judiciales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE5NTQwMTYwLCJqdGkiOiJkZTYyMTU1OGVjMDI0ZDY4OGFmNjhlMTNiN2E3MTQ1MSIsInVzZXJfaWQiOjF9.Hvk6knqOQt5S9QPQHs5b73Tkr21bMnGWoVQIoGZi5wE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cuenta-judicial/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cuenta-judicial",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cuenta Judicial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE5NTQwMTYwLCJqdGkiOiJkZTYyMTU1OGVjMDI0ZDY4OGFmNjhlMTNiN2E3MTQ1MSIsInVzZXJfaWQiOjF9.Hvk6knqOQt5S9QPQHs5b73Tkr21bMnGWoVQIoGZi5wE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cuenta-judicial/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cuenta-judicial",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cuenta Judicial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxMDA2ODc2LCJqdGkiOiI4MDBjZGI5YTE3YjA0YjBmOGM2ZjdiNzdmNzQ0OGM3MiIsInVzZXJfaWQiOjF9.576ZZIlDNERwyaEjR8kDImQE-45AFqq2McvNeivOvJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "responsableDeCarga",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "delegacion",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "oficioJudicial",
+									"type": "file",
+									"src": "/home/victor/Descargas/google-maps-earth-1.0.0.jpg"
+								},
+								{
+									"key": "informacionAdicional",
+									"value": "Cuenta Judicial",
+									"type": "text"
+								},
+								{
+									"key": "afiliado",
+									"value": "4",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/cuenta-judicial/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cuenta-judicial",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cupon",
+			"item": [
+				{
+					"name": "Cupones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cupon/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cupon",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cupon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cupon/31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cupon",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"solicitudes\": [\n        16,18,20,27\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/cupon/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cupon",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verificador Cupones",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"solicitudes\": [\n        16,18,20,27\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/cupon/verificar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cupon",
+								"verificar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lote",
+			"item": [
+				{
+					"name": "Lotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/lote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/lote/60",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lote",
+								"60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cupones\": [38,39,40,41]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/lote/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lote",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Preview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cupones\": [53, 54, 55, 56, 57, 58, 59]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/lote/preview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lote",
+								"preview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Archivo PO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/lote/77/crear-archivo-po",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lote",
+								"77",
+								"crear-archivo-po"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Archivo PO",
+			"item": [
+				{
+					"name": "Archivos po",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/archivo-po",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"archivo-po"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/archivo-po/58/descargar-archivo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"archivo-po",
+								"58",
+								"descargar-archivo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ldap Sync Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/usuarios/ldap-sync-users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"usuarios",
+						"ldap-sync-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Afiliados",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <BEWsValidaAfi.Execute xmlns=\"IPROSS_TESTINT2\">\n            <Nafiliado>3-21847480/0</Nafiliado>\n        </BEWsValidaAfi.Execute>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://sistemaintegral.ipross.rionegro.gov.ar/IPROSS_WS/servlet/abewsvalidaafi?wsdl",
+					"protocol": "http",
+					"host": [
+						"sistemaintegral",
+						"ipross",
+						"rionegro",
+						"gov",
+						"ar"
+					],
+					"path": [
+						"IPROSS_WS",
+						"servlet",
+						"abewsvalidaafi"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test SOAP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <SayHello xmlns=\"http://learnwebservices.com/services/hello\">\n         <HelloRequest>\n            <Name>John Doe</Name>\n         </HelloRequest>\n      </SayHello>\n   </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://www.learnwebservices.com/services/hello?WSDL",
+					"protocol": "http",
+					"host": [
+						"www",
+						"learnwebservices",
+						"com"
+					],
+					"path": [
+						"services",
+						"hello"
+					],
+					"query": [
+						{
+							"key": "WSDL",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Auditoria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzMTU4MTc2LCJqdGkiOiIzNjhhYTFhYmNlOTY0OWJlODFiNzdjMTYyYzY5NTQyMSIsInVzZXJfaWQiOjF9.LRHwjyxA_jy9O0nZaypAU4oxYzNYJaGy05ERK3tS3O8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/test-contaduria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"test-contaduria"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

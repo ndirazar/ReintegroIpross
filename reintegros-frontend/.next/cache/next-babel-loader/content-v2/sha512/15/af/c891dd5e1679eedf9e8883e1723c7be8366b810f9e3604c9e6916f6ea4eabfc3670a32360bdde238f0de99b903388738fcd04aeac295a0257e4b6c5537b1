@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useContext } from 'react';\nimport { AlertContext } from '../../providers/Alert';\n\nfunction useAlert() {\n  const {\n    alert,\n    addAlert,\n    removeAlert\n  } = useContext(AlertContext);\n  return {\n    alert,\n    addAlert,\n    removeAlert\n  };\n}\n\nexport default useAlert;","map":null,"metadata":{},"sourceType":"module"}

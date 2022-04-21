@@ -1,0 +1,46 @@
+import { Delete, Edit } from '@material-ui/icons';
+import React from 'react';
+import { ACTIONS, {{upperCase name}} } from '../../labels';
+import Table from '../common/Table';
+import { apiRequest } from '../common/types/Request';
+
+type Props = {
+  data: apiRequest;
+  handleDelete?: (id: number) => void;
+  onEdit: (data: any) => void;
+};
+export default function {{pascalCase name}}List({ data, handleDelete, onEdit }: Props) {
+  const columns = Object.keys({{upperCase name}}.fields).map((key) => ({
+    title: {{upperCase name}}.fields[key],
+    field: key,
+    render: {{upperCase name}}.renders[key] ?? null,
+  }));
+
+  return (
+    <Table
+      columns={columns}
+      totalCount={data.count}
+      data={data.results}
+      title={ {{upperCase name}}.name }
+      options={ {
+        search: false,
+      } }
+      actions={ [
+        {
+          icon: <Edit />,
+          tooltip: ACTIONS.update({{upperCase name}}.name),
+          onClick: (event, rowData) => {
+            onEdit(rowData);
+          },
+        },
+        {
+          icon: <Delete />,
+          tooltip: ACTIONS.delete({{upperCase name}}.name),
+          onClick: async (event, rowData) => {
+            handleDelete(rowData?.id);
+          },
+        },
+      ] }
+    />
+  );
+}

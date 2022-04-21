@@ -1,0 +1,6 @@
+projectKey=a51b65cfad699efb113a1b856ae2d6e1b668f9a4
+serverUrl=https://sonar.patagonian.it
+serverVersion=7.9.4.35981
+dashboardUrl=https://sonar.patagonian.it/dashboard?id=a51b65cfad699efb113a1b856ae2d6e1b668f9a4
+ceTaskId=AXfa-KFxFRBL6jmfRKTC
+ceTaskUrl=https://sonar.patagonian.it/api/ce/task?id=AXfa-KFxFRBL6jmfRKTC

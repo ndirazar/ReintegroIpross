@@ -1,0 +1,85 @@
+import { Box } from '@material-ui/core';
+import React, { useState } from 'react';
+import useSWR from 'swr';
+import {{pascalcase name}}Form from './{{pascalcase name}}Form';
+import {{pascalcase name}}List from './{{pascalcase name}}List';
+import { post, put, remove } from '../api-call/service';
+import Loading from '../common/Loading';
+import { ACTIONS, ERRORS, LOADING, {{upperCase name}} } from '../../labels';
+import Alert from '../common/Alert';
+import { Action } from '../common/types/Action';
+import ActionBar from '../common/ActionBar';
+import SaveIcon from '@material-ui/icons/Save';
+
+export default function {{pascalcase name}}() {
+  const { data, error: errotOnGet, mutate } = useSWR({{upperCase name}}.route);
+
+  const [openForm, setOpenForm] = useState(false);
+  const [error, setError] = useState(null);
+  const [currentData, setCurrentData] = useState(null);
+
+  const {{camelcase name}}Actions: Action[] = [
+    {
+      label: ACTIONS.crete({{upperCase name}}.name),
+      onClick: () => setOpenForm(!openForm),
+      icon: <SaveIcon />,
+    },
+  ];
+  const handleSubmit = async (data) => {
+    try {
+      if (currentData?.id) {
+        await put({{upperCase name}}.route, { ...data }, currentData?.id);
+      } else {
+        await post({{upperCase name}}.route, { ...data });
+      }
+      setError(null);
+    } catch (error) {
+      if (currentData?.id) {
+        setError('onEdit');
+      } else {
+        setError('onCreate');
+      }
+    }
+    setCurrentData(null);
+    setOpenForm(false);
+    mutate();
+  };
+
+  const handleCancel = async () => {
+    setCurrentData(null);
+    setOpenForm(false);
+  };
+
+  const handleDelete = async (id: number) => {
+    try {
+      await remove({{upperCase name}}.route, id);
+      setError(null);
+    } catch (error) {
+      setError('onDelete');
+    }
+    mutate();
+  };
+
+  const onEdit = async (data) => {
+    setOpenForm(false);
+    setCurrentData(data);
+    setOpenForm(true);
+  };
+  return (
+    <>
+      <ActionBar actions={ {{camelcase name}}Actions } />
+     
+        <Box p={2} m={1}>
+          {openForm && <{{pascalcase name}}Form data={currentData} handleSubmit={handleSubmit} handleCancel={handleCancel}/>}
+          {data && ( <{{pascalcase name}}List data={data} handleDelete={handleDelete} onEdit={onEdit} />  )}
+        </Box>
+     
+      <Loading loading={!data} message={LOADING({{upperCase name}}.name)} />
+      <Alert
+        open={errotOnGet || error}
+        severity="error"
+        message={error ? ERRORS[error]({{upperCase name}}.name) : ERRORS.onGet({{upperCase name}}.name)}
+      />
+    </>
+  );
+}

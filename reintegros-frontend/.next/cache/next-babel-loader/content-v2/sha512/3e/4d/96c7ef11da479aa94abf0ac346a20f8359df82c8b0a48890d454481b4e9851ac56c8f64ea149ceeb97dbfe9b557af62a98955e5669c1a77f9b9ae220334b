@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Modal from './Modal';\nexport default Modal;","map":{"version":3,"sources":["/reintegros/reintegros-frontend/components/common/Modal/index.ts"],"names":["Modal"],"mappings":"AAAA,OAAOA,KAAP,MAAkB,SAAlB;AAEA,eAAeA,KAAf","sourcesContent":["import Modal from './Modal';\n\nexport default Modal;\n"]},"metadata":{},"sourceType":"module"}

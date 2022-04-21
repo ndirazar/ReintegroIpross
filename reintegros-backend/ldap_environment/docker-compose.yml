@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  ldap_server:
+      image: osixia/openldap:1.4.0
+      environment:
+        LDAP_ADMIN_PASSWORD: test1234
+        LDAP_ORGANISATION: IPROSS
+      ports:
+        - 390:389
+      volumes:
+        - ldap_data:/var/lib/ldap
+        - ldap_config:/etc/ldap/slapd.d
+  ldap_server_admin:
+      image: osixia/phpldapadmin:0.9.0
+      ports:
+        - 8090:80
+      environment:
+        PHPLDAPADMIN_LDAP_HOSTS: ldap_server
+        PHPLDAPADMIN_HTTPS: 'false'
+volumes:
+  ldap_data:
+  ldap_config:

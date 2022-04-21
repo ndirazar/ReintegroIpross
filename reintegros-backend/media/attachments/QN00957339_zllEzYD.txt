@@ -1,0 +1,14 @@
+FHQN0000719202112210050037210002791ESTADORPAGO       20211217                     ADH0000719
+N1PO00007192021122100500041-0000120            13888964000
+QN13888964000   APROBACION PENDIENTE BCO                                       Lote OP Ingresado
+QN13888964000   APROBACION PENDIENTE BCO                                       Lote OP Aprobado
+QN13888964000   PENDIENTE DE EJECUCION                                         Asignaci�n Camara Transf
+QN13888964000   PENDIENTE DE EJECUCION                                         OP Validada - Sin Errores
+QN13888964000   PENDIENTE DE EJECUCION                                         Observaciones Detectadas
+QN13888964000   SIN RETIRAR/CRED A CONFIR                                      D�bito de OP en Cuenta
+QN13888964000   SIN RETIRAR/CRED A CONFIR                                      Transf. Lista a Ejecutar
+QN13888964000   ENTREGADO / EJECUTADA                                          Transferencia Ejecutada
+QN13888964000   RECHAZADA                                                      Cr�dito de OP en Cuenta
+QN13888964000   RECHAZADA                                                      Transf Rechazada Bco Cred
+T1                         0000000012
+FT                         0000012831

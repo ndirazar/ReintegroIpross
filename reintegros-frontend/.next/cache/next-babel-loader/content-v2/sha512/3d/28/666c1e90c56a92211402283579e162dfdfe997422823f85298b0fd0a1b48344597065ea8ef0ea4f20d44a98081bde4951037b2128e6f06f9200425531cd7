@@ -1,0 +1,1 @@
+{"ast":null,"code":"","map":{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":["import { FormField } from './FormField';\n\nexport type FormConfig<T> = FormField<T>[];\n"]},"metadata":{},"sourceType":"module"}

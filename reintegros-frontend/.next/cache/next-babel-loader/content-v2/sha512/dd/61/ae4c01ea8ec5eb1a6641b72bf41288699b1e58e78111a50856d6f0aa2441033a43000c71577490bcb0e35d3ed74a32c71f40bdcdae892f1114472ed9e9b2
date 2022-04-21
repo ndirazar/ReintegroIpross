@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { FieldType } from '../builder/FormField';\nconst configImportNomenclador = [{\n  name: 'archivoAdjunto',\n  type: FieldType.file,\n  label: 'Archivo Adjunto',\n  styling: {\n    columns: 4\n  },\n  rules: {\n    required: true\n  }\n}];\nexport default configImportNomenclador;","map":null,"metadata":{},"sourceType":"module"}
