@@ -1,19 +1,6 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/afiliados": "pages/afiliados.html",
-  "/auditorias": "pages/auditorias.html",
-  "/cuentas_judiciales": "pages/cuentas_judiciales.html",
-  "/cuentas_terceros": "pages/cuentas_terceros.html",
-  "/cupones": "pages/cupones.html",
-  "/delegaciones": "pages/delegaciones.html",
-  "/": "pages/index.html",
-  "/login": "pages/login.html",
-  "/lotes": "pages/lotes.html",
-  "/nomenclador": "pages/nomenclador.html",
-  "/prestadores": "pages/prestadores.html",
-  "/solicitudes": "pages/solicitudes.html",
-  "/usuarios": "pages/usuarios.html",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.html"
+  "/solicitudes": "pages/solicitudes.js"
 }
